@@ -8,12 +8,8 @@ from openai import OpenAI
 
 # ✅ Clova API (OpenAI 호환)
 client = OpenAI(
-    api_key="nv-6eb81874aec54543ac9e265716583c99OUDo",
-    base_url="https://clovastudio.stream.ntruss.com/v1/openai"
-)
-# ✅ OpenAI (Fallback)
-openai_client = OpenAI(
-    api_key="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"
+    api_key="--",
+    base_url="--"
 )
 
 embed_model = SentenceTransformer("all-MiniLM-L6-v2")

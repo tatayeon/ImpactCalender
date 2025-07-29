@@ -6,13 +6,9 @@ from rag_index import create_faiss_index_from_docs
 from rag_search import rag_query_from_docs
 from openai import OpenAI
 
-# # ✅ OpenAI GPT (항상 사용)
-# openai_client = OpenAI(
-#     api_key="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"
-# )
 clova_client = OpenAI(
-    api_key="nv-6eb81874aec54543ac9e265716583c99OUDo",
-    base_url="https://clovastudio.stream.ntruss.com/v1/openai"
+    api_key="--",
+    base_url="--"
 )
 
 DART_API_KEY = "498aec95c5e5ab771b633ac7c32c2dea139c65a3"
