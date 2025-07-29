@@ -8,8 +8,8 @@ from openai import OpenAI
 
 # ✅ Clova API (OpenAI 호환)
 client = OpenAI(
-    api_key="--",
-    base_url="--"
+    api_key=os.environ.get("OPENAI_API_KEY", ""),
+    base_url=os.environ.get("OPENAI_BASE_URL", "")
 )
 
 embed_model = SentenceTransformer("all-MiniLM-L6-v2")

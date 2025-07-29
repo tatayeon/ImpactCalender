@@ -7,11 +7,11 @@ from rag_search import rag_query_from_docs
 from openai import OpenAI
 
 clova_client = OpenAI(
-    api_key="--",
-    base_url="--"
+    api_key=os.environ.get("OPENAI_API_KEY", ""),
+    base_url=os.environ.get("OPENAI_BASE_URL", "")
 )
 
-DART_API_KEY = "498aec95c5e5ab771b633ac7c32c2dea139c65a3"
+DART_API_KEY = os.environ.get("DART_API_KEY", "")
 
 # ================================
 # ✅ 1. document.xml API 호출
