@@ -5,11 +5,12 @@ import os
 import time
 from sentence_transformers import SentenceTransformer
 from openai import OpenAI
+import streamlit as st
 
 # ✅ Clova API (OpenAI 호환)
 client = OpenAI(
-    api_key=os.environ.get("OPENAI_API_KEY", ""),
-    base_url=os.environ.get("OPENAI_BASE_URL", "")
+    api_key=st.secrets["OPENAI_API_KEY"],
+    base_url=st.secrets["OPENAI_BASE_URL"]
 )
 
 embed_model = SentenceTransformer("all-MiniLM-L6-v2")

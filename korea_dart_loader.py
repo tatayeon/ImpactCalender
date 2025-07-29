@@ -1,17 +1,17 @@
 import requests, zipfile, io, xml.etree.ElementTree as ET, os, datetime
 from bs4 import BeautifulSoup
-
 from crawler import crawl_naver_view_titles
 from rag_index import create_faiss_index_from_docs
 from rag_search import rag_query_from_docs
 from openai import OpenAI
+import streamlit as st
 
 clova_client = OpenAI(
     api_key=os.environ.get("OPENAI_API_KEY", ""),
     base_url=os.environ.get("OPENAI_BASE_URL", "")
 )
 
-DART_API_KEY = os.environ.get("DART_API_KEY", "")
+DART_API_KEY = st.secrets.get("DART_API_KEY", "")
 
 # ================================
 # ✅ 1. document.xml API 호출
